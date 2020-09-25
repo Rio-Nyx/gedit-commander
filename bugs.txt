@@ -1,2 +1,3 @@
 Its an old version. So there are lot of deprecated functions in it. So I have to port to newer versions
-<br>1. Gedit has no attributes SearchFlags --> in commander/modules/__init__.py line 69
+1. Gedit has no attributes SearchFlags --> in commander/modules/__init__.py line 69
+trying to replace finder module
