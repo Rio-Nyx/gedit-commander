@@ -189,7 +189,8 @@ class Finder:
 
     def cancel(self):
         buf = self.view.get_buffer()
-
+        # used return to omit error becuase set_search_text doesnt work
+        return
         buf.set_search_text('', 0)
         buf.move_mark(buf.get_selection_bound(), buf.get_iter_at_mark(buf.get_insert()))
 
