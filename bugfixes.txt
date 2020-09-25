@@ -1,0 +1,5 @@
+Couldn't replace the deprecated attributes as of now
+Since the regex functionalities does fine, replacing the commands with regex
+returns when an error encounters.
+so there wont be any errors showing up.
+# jsut a temporary solution.
