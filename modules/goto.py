@@ -27,6 +27,7 @@ import commander.commands.result
 import commander.commands.exceptions
 
 __commander_module__ = True
+__root__ = [':']
 
 def __default__(view, line, column=1):
     """Goto line number"""
@@ -59,5 +60,5 @@ def __default__(view, line, column=1):
     view.scroll_to_iter(citer, 0.0, True, 0, 0.5)
 
     return commander.commands.result.HIDE
-
+locals()[':'] = __default__
 # ex:ts=4:et
