@@ -27,7 +27,7 @@ from xml.sax import saxutils
 from . import finder
 
 __commander_module__ = True
-__root__ = ['/', 'find_i', '//', 'r/', 'r//']
+__root__ = ['/', 'find_i', '//', 'r/', 'r//','///','///i']
 
 class TextFinder(finder.Finder):
     def __init__(self, entry, flags):
@@ -90,10 +90,18 @@ Quickly find and replace all phrases in the document (case insensitive)"""
     fd = TextFinder(entry,0)
     yield fd.replace(findstr, True, replstr)
 
-locals()['/'] = __default__
-locals()['find_i'] = _find_insensitive
-locals()['//'] = replace
+# the following are commented out because there are some bugs in finder module. Can try to fix later.
+# now just using the regex plugin--> which is much better than finder
+#locals()['/'] = __default__
+#locals()['find_i'] = _find_insensitive
+#locals()['//'] = replace
 locals()['r/'] = regex.__default__
 locals()['r//'] = regex.replace
+locals()['/'] = regex._find_insensitive
+locals()['//'] = regex.replace
+locals()['///'] = regex.replace_all
+locals()['///i'] = regex.replace_all_i
+
+
 
 # ex:ts=4:et
